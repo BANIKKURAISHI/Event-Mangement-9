@@ -1,11 +1,11 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { PropTypes } from 'prop-types';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import auth from "../FireBase/Firebase.config";
 
  export const AuthContext=createContext(null)
 const AuthProvider = ({children}) => {
-    
+    const [user,setUser]=useState(null)
     const googleProvider = new GoogleAuthProvider()
 //--------Log in with google ------------------------------------------------------------------
     const googleButton=()=>{
@@ -19,9 +19,16 @@ const registrationButton=(email,password)=>{
  const singInButton=(email,password)=>{
     return signInWithEmailAndPassword(auth, email, password)
  }
+ ////--------------------------onAuth ----------------------------------------------------------
+ useEffect(()=>{
+     const unsubscribe =onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser)})
 
+        return()=>{unsubscribe()}
+ },[])
+  
 //--------------------props ----------------------------------------------------------------------
-    const value={googleButton, registrationButton,singInButton}
+    const value={user,googleButton, registrationButton,singInButton}
     return (
         <AuthContext.Provider value={value}  >
             {children}

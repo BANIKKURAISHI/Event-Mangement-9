@@ -1,6 +1,6 @@
 
 
-const Slider = () => {
+const Banner = () => {
     return (
         <div>
             <div className="carousel carousel-center w-[1200px] rounded-lg">
@@ -16,4 +16,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default Banner;

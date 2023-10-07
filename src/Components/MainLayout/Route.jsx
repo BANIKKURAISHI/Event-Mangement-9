@@ -4,6 +4,9 @@ import Error from "./Error";
 import Home from "../Home/Home";
 import Reg from "../Reg and Log in page/Reg";
 import Login from "../Reg and Log in page/Login";
+import Team from "../Home/Team";
+import ContactUs from "../Pages/ContactUs";
+
 
 
 const myCreateRoute=createBrowserRouter([
@@ -19,6 +22,12 @@ const myCreateRoute=createBrowserRouter([
          
        },
        {
+          path:'/',
+          loader:()=>fetch('/team.Json'),
+          element:<Team></Team>,
+       
+     },
+       {
             path:'/reg',
             element:<Reg></Reg>,
          
@@ -28,6 +37,11 @@ const myCreateRoute=createBrowserRouter([
           element:<Login></Login>,
        
      },
+     {
+          path:'/contact',
+          element:<ContactUs></ContactUs>,
+       
+     }
 
       
        ]

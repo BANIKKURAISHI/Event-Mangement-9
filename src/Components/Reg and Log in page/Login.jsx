@@ -37,7 +37,7 @@ const singInButtonEmailAndPassword=(e)=>{
 
     return (
         <div>
-            <ToastContainer /> 
+           
                    <div className="hero min-h-screen bg-base-200">
                    <div className="hero-content flex-col">
                    <div className="card ">
@@ -72,6 +72,7 @@ const singInButtonEmailAndPassword=(e)=>{
                    </div>
                    </div>
                    </div>
+                   <ToastContainer /> 
                   </div>
     );
 };

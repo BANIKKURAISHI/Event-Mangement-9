@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const Service = ({service}) => {
     const {name,short_description,img}=service
     return (
-        <div>
-            <Link>
+        <div > 
+            <Link >
                          <div className="card card-compact w-96 bg-base-100 shadow-xl">
                          <figure><img src={img} alt="Shoes"className="w-96 h-52" /></figure>
                          <div className="card-body">
