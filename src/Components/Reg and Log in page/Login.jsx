@@ -6,19 +6,33 @@ import { AuthContext } from "../PROVIDER/AuthProvider";
 
 const Login = () => {
      const {googleButton,singInButton}= useContext(AuthContext)
-   
+    
 //-----------------------------------Direct sing in with  Google-----------------------
   const googleHandleButton=()=>{
              googleButton()
             .then(result=>{
                 const user=result.user
                 console.log(user)
-                toast("Google sing in is success full ")
+                toast("Google Login is success full ")
             })
   }
 //------------------------------------sing in email and password --------------------------
-const singInButtonEmailAndPassword=(email,password)=>{
-    
+const singInButtonEmailAndPassword=(e)=>{
+                e.preventDefault()
+                const form=new FormData(e.currentTarget)
+                const email=form.get('email')
+                const password =form.get('password')
+
+               singInButton(email,password)
+               .then(result=>{
+                const user =result.user 
+                toast("Login is success full ",user)
+               })
+               .catch(error=>{
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast(errorCode ,errorMessage )
+               })
 }
 
     return (
@@ -28,7 +42,7 @@ const singInButtonEmailAndPassword=(email,password)=>{
                    <div className="hero-content flex-col">
                    <div className="card ">
                    <h1 className="text-center  text-4xl text-blue-600 my-4">Login Now</h1>
-                   <form  className="w-96" >
+                   <form onSubmit={singInButtonEmailAndPassword}  className="w-96" >
 
                       <div className="form-control">
                       <label className="label">

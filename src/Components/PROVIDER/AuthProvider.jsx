@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { PropTypes } from 'prop-types';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import auth from "../FireBase/Firebase.config";
 
  export const AuthContext=createContext(null)
@@ -15,10 +15,13 @@ const AuthProvider = ({children}) => {
 const registrationButton=(email,password)=>{
     return createUserWithEmailAndPassword(auth, email, password)
 }
-
+//---------------------------Login with email and password ------------------------------------
+ const singInButton=(email,password)=>{
+    return signInWithEmailAndPassword(auth, email, password)
+ }
 
 //--------------------props ----------------------------------------------------------------------
-    const value={googleButton, registrationButton}
+    const value={googleButton, registrationButton,singInButton}
     return (
         <AuthContext.Provider value={value}  >
             {children}
