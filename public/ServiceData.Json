@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/D108H8F/ec6940408c2dfad82fb262d7b2250ede.jpg",
+      "name": "Full Wedding Planning",
+      "price": 3500,
+      "short_description": "Comprehensive wedding planning service to make your special day stress-free.",
+      "details": "Our full wedding planning service is designed to handle every aspect of your wedding day. We'll assist you with venue selection, decor, vendor coordination, budget management, and more. Our experienced team will ensure that your wedding day is truly memorable and free of worries."
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/dG6Wnmv/pexels-photo-169196.jpg",
+      "name": "Decor and Floral Arrangements",
+      "price": 1500,
+      "short_description": "Elegant decor and stunning floral arrangements for a beautiful ambiance.",
+      "details": "Our decor and floral arrangements will transform your wedding venue into a breathtaking and romantic space. From enchanting centerpieces to awe-inspiring arches, we'll create a unique atmosphere that matches your style and vision."
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/ZffsdbK/garden-party-catering.jpg",
+      "name": "Catering Services",
+      "price": 2500,
+      "short_description": "Delicious catering options to delight your guests' taste buds.",
+      "details": "Our catering services offer a delectable range of menu options, from gourmet cuisine to comfort food. We can accommodate dietary preferences and provide exceptional service to ensure your guests have a memorable dining experience."
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/CsVysbs/Wedding-Day-Photography.jpg",
+      "name": "Photography and Videography",
+      "price": 2800,
+      "short_description": "Capture every moment with professional photography and video graphy.",
+      "details": "Our experienced photographers and video graphers will capture all the special moments of your wedding day, from the emotional ceremony to the lively reception. You'll cherish these memories for a lifetime."
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/Y8BzcxQ/Depositphotos-12643682-original-e1565705456516.jpg",
+      "name": "Entertainment and DJ",
+      "price": 1200,
+      "short_description": "Keep the party alive with top-notch entertainment and DJ services.",
+      "details": "Our entertainment and DJ services will keep your guests dancing and having a blast all night long. We offer a wide range of music and entertainment options to suit your style and preferences."
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/94dsch8/goods-cakes-1.jpg",
+      "name": "Wedding Cake Design Services",
+      "price": 900,
+      "short_description": "Custom wedding cakes and delightful pastries for your sweet moments.",
+      "details": "Our talented bakers will create a stunning wedding cake that not only looks incredible but tastes divine. We also offer a delightful selection of pastries and desserts to satisfy your sweet cravings."
+    }
+  ]
