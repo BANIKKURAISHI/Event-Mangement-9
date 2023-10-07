@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../PROVIDER/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Reg = () => {
         const {registrationButton}=useContext(AuthContext)
@@ -13,12 +16,20 @@ const Reg = () => {
              console.log(email,password)
              registrationButton(email,password)
              .then(result=>{
-              console.log(result.user)
+              toast('Your registration is success full',result)
              })
+             .catch(error=>{
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              toast(errorCode ,errorMessage )
+            })
+
+              
        }
 
     return (
         <div>
+            <ToastContainer /> 
              <div className="hero min-h-screen bg-base-200">
              <div className="hero-content flex-col">
              <div className="card ">

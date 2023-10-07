@@ -5,9 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../PROVIDER/AuthProvider";
 
 const Login = () => {
-     const {googleButton}= useContext(AuthContext)
+     const {googleButton,singInButton}= useContext(AuthContext)
    
-
+//-----------------------------------Direct sing in with  Google-----------------------
   const googleHandleButton=()=>{
              googleButton()
             .then(result=>{
@@ -16,7 +16,10 @@ const Login = () => {
                 toast("Google sing in is success full ")
             })
   }
-
+//------------------------------------sing in email and password --------------------------
+const singInButtonEmailAndPassword=(email,password)=>{
+    
+}
 
     return (
         <div>
@@ -25,7 +28,7 @@ const Login = () => {
                    <div className="hero-content flex-col">
                    <div className="card ">
                    <h1 className="text-center  text-4xl text-blue-600 my-4">Login Now</h1>
-                   <form className="w-96" >
+                   <form  className="w-96" >
 
                       <div className="form-control">
                       <label className="label">
