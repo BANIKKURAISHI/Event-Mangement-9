@@ -1,9 +1,26 @@
+import { useContext} from "react";
 import { Link } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../PROVIDER/AuthProvider";
 
 const Login = () => {
+     const {googleButton}= useContext(AuthContext)
+   
+
+  const googleHandleButton=()=>{
+             googleButton()
+            .then(result=>{
+                const user=result.user
+                console.log(user)
+                toast("Google sing in is success full ")
+            })
+  }
+
+
     return (
         <div>
+            <ToastContainer /> 
                    <div className="hero min-h-screen bg-base-200">
                    <div className="hero-content flex-col">
                    <div className="card ">
@@ -31,7 +48,7 @@ const Login = () => {
                    </div>
 
                    <div className="form-control mt-6">
-                   <button className="btn btn-primary">Login with Google</button>
+                   <button onClick={googleHandleButton} className="btn btn-primary">Login with Google</button>
                    </div>
                    </form>
                    <div><p className="text-2xl my-3">New Here ?Please <Link className="text-blue-700 mx-2" to="/reg">Register</Link></p></div>
