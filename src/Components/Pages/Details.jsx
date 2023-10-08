@@ -1,4 +1,5 @@
-import {  useLoaderData, useParams } from "react-router-dom";
+import {  Link, useLoaderData, useParams } from "react-router-dom";
+import { saveStoreItem } from "./Storage";
 
 
 
@@ -6,9 +7,13 @@ const Details = () => {
              const gives =useLoaderData()
              const {id} =useParams()
              const newId=parseInt(id)
-            const give =gives.find(give=>give.id===newId)
+             const give =gives.find(give=>give.id===newId)
              const {img,name,details}=give
-
+  
+             const handleButton=()=>{
+              saveStoreItem(newId)
+              console.log(newId)
+             }
             
 
     return (
@@ -19,6 +24,7 @@ const Details = () => {
                          <div className="card-body">
                          <h2 className="card-title">{name}</h2>
                          <p>{details}</p>
+                         <Link to="/details">  <button onClick={handleButton}>See More Details .....</button></Link>   
                          </div>
                                
               </div>

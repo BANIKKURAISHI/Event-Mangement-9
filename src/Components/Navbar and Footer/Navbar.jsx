@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { AuthContext } from './../PROVIDER/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,7 +24,6 @@ const Navbar = () => {
 <NavLink to="/about" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium  bg-red-600 text-center rounded-md"}>About us</NavLink>
 <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600 text-center rounded-md"}>Contact Us</NavLink>
 <NavLink to="/details" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium  bg-red-600 text-center rounded-md"}>Details</NavLink>
-
 <NavLink to="/in" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600 text-center rounded-md"}>Login</NavLink>
 <NavLink to="/reg" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl  text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600  text-center rounded-md"}>Registration</NavLink>
 </div>
@@ -51,23 +50,31 @@ const Navbar = () => {
         }
       </ul>
     </div>
-    <a className="normal-case font-bold text-rose-900 text-4xl">Weeding planner Agency</a>
+    <a className="normal-case font-bold text-rose-900 text-4xl">Weeding planner</a>
   </div>
-  <div className="navbar-end hidden lg:flex">
+  <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
      {links}
     </ul>
   </div>
+  <div className="navbar-end">
   {
     user?<div>
-        <h1 className="text-white text-xl bg-rose-700 border rounded-md p-3">{user.email}</h1>
-        <button onClick={logoutButton}>Logout</button>
+        <div className="flex flex-row">
+        <img src={user?.img} className="w-20 h-20" alt=""  />
+        <h1 className="text-white text-center -pb-2 text-sm bg-rose-700 border rounded-md ">{user.email}
+        <br />{user.name}</h1>
+        <button className="bg-rose-700 text-white p-3 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " onClick={logoutButton}>Logout</button>
+        </div>
+      
+       
     </div>:
     <div>
-      <Link to='/in'></Link>
+      
+      <NavLink to="/in" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 text-white p-3 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " : "p-3 mr-2 my-3 text-center text-xl font-medium  text-white bg-red-600  rounded-md"}>Login</NavLink>
     </div>
   }
-
+</div>
 </div>
 <ToastContainer /> 
         </div>

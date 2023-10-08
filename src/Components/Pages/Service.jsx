@@ -1,9 +1,9 @@
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
+import { AiOutlineDollar} from "react-icons/ai"
 const Service = ({service}) => {
-    const {name,short_description,img,id}=service
+    const {name,short_description,img,id,price}=service
     return (
         <div > 
           
@@ -12,9 +12,10 @@ const Service = ({service}) => {
                          <div className="card-body">
                          <h2 className="card-title">{name}</h2>
                          <p>{short_description}</p>
+                         <p className='flex flex-row my-2 font-medium text-xl'> Price :{price} <span className='ml-1 my-1'><AiOutlineDollar></AiOutlineDollar></span></p>
                          </div>
                          <div className="card-actions justify-center mb-4">
-                        <Link to={`/details/${id}`} ><button  className="btn  w-3/4  bg-red-600 ">Details</button></Link>    
+                        <Link to={`/${id}`} ><button  className="btn  w-60 bg-red-300 ">Details</button></Link>    
                        </div>
             
         </div>

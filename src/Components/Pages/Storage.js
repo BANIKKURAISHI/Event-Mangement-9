@@ -1,7 +1,7 @@
 const getStoreItem=()=>{
-  const getItem=localStorage.getItem('ItemName')
-  if(getItem){
-    return JSON.parse(getItem)
+  const getItems=localStorage.getItem('ItemName')
+  if(getItems){
+    return JSON.parse(getItems)
   }
 
 return[]

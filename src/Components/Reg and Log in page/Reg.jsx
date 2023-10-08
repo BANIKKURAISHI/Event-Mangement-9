@@ -14,6 +14,21 @@ const Reg = () => {
                const email=form.get('email')
                const password =form.get('password')
              console.log(email,password)
+      if(password.length <6){
+        toast('You must should given valid password' )
+         return
+      }
+      else if (!/[A-Z0]/.test(password)){
+        toast('You must should given valid password' )
+        return 
+      }
+      else if (!/(?=.*[!@#$%^&*()_+])/.test(password)){
+        toast('You must should given valid password' )
+        return 
+      }
+
+
+
              registrationButton(email,password)
              .then(result=>{
               toast('Your registration is success full',result)

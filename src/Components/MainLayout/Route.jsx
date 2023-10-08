@@ -4,10 +4,12 @@ import Error from "./Error";
 import Home from "../Home/Home";
 import Reg from "../Reg and Log in page/Reg";
 import Login from "../Reg and Log in page/Login";
-import Team from "../Home/Team";
+
 import ContactUs from "../Pages/ContactUs";
 import Details from "../Pages/Details";
 import Private from "../PROVIDER/Private";
+import Details2 from "../Pages/Details2";
+
 
 
 
@@ -24,12 +26,7 @@ const myCreateRoute=createBrowserRouter([
             element:<Home></Home>,
          
        },
-       {
-          path:'/',
-          loader:()=>fetch('/team.Json'),
-          element:<Team></Team>,
-       
-     },
+      
        {
             path:'/reg',
             element:<Reg></Reg>,
@@ -47,11 +44,18 @@ const myCreateRoute=createBrowserRouter([
        
      },
      {
-          path:'/details/:id',
+          path:'/:id',
         
           element:<Private><Details></Details></Private>,
           loader:()=>fetch('/ServiceData.Json'),
      },
+
+     {
+          path:'/details',
+        
+          element:<Private><Details2></Details2></Private>,
+          loader:()=>fetch('/ServiceData.Json/'),
+     }
      
 
 
