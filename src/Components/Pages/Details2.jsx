@@ -1,51 +1,52 @@
 import { useEffect, useState } from "react";
+
+import {getStore } from "./Storage";
 import { useLoaderData } from "react-router-dom";
-import { getStoreItem } from "./Storage";
+
 
 
 
 const Details2 = () => {
-    const loads=useLoaderData() 
-     console.log(loads)     
-    const [values,setValues]=useState([])
+    
    
-//  useEffect(()=>{
-//     const newGetItem=getStoreItem()
-//     if (loads.length > 0){
-//         const saveData=[]
-//         for(const id of newGetItem){
-//             const finding=loads.find(load=>load.id===id)
-//             if(finding){
-//                 saveData.push(finding) 
-//             }
-//     }
-//     setValues(saveData)
+    const loads=useLoaderData()
+
+    const [values,setValues]=useState([])
+  
  
-//  }},[loads])
-useEffect(()=>{
-    const DonateId=getStoreItem()
-    
-    if(loads.length > 0){
-        const donateApplied =[]
-       for (const id of DonateId){
-        const applied=loads(applied => applied.id === id)
-        if(applied){
-            donateApplied.push(applied)
+    useEffect(()=>{
+     const storeId=getStore()
+     
+     if(loads.length > 0){
+         const totalStoreCard =[]
+        for (const id of  storeId){
+         const given=loads.find(taken=>taken.id === id)
+         if(given){
+            totalStoreCard.push(given)
+         }
         }
-       }
-       setValues(donateApplied)
-        console.log(donateApplied)
-    }
-    
-   },[loads])
+        setValues(totalStoreCard)
+        // console.log(donates,donateApplied,DonateId)
+     }
+     
+    },[loads])
 
 
     return (
-        <div>
+        <div className="max-w-7xl mx-10 lg:mx-[550px]">
            {
-            values.map(value=><li key={value.id}>
-            <h1>{value.name}</h1>
-
+            values.map(val=><li className="list-none mb-5" key={val.id}>
+              <div className="card w-80 md:w-[800px] glass">
+              <figure><img src={val.img} className="w-[800px] h-[400px]" alt="car!"/></figure>
+              <div className="card-body">
+              <h2 className="card-title">{val.name}</h2>
+              <p>{val.details}</p>
+              <div className="card-actions justify-end">
+              <button className="btn btn-primary">Go Back Previous Page</button>
+              </div>
+              </div>
+              </div>
+          
             </li>)
            }
         </div>

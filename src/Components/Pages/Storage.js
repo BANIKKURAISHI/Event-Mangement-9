@@ -1,16 +1,18 @@
-const getStoreItem=()=>{
-  const getItems=localStorage.getItem('ItemName')
-  if(getItems){
-    return JSON.parse(getItems)
+const getStore=()=>{
+  const store=localStorage.getItem('ItemName')
+  if(store){
+      return JSON.parse(store)
   }
-
-return[]
+  return[]
 }
 
-const saveStoreItem=(id)=>{
-   const addCard=getStoreItem()
-   addCard.push(id)
-  localStorage.getItem('ItemName',JSON.stringify(addCard))
+const saveStore= id =>{
+  const saveData=getStore()
+  saveData.push(id)
+  localStorage.setItem('ItemName',JSON.stringify(saveData))
+
+
 }
 
-export {saveStoreItem,getStoreItem}
+
+export {saveStore,getStore}

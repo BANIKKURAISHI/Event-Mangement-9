@@ -28,7 +28,7 @@ const Navbar = () => {
 <NavLink to="/reg" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl  text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600  text-center rounded-md"}>Registration</NavLink>
 </div>
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto flex-col md: ">
             <div className="navbar my-5 bg-solid-400 rounded-md">
   <div className="navbar-start">
     <div onClick={()=>setOpen(!open)} className="dropdown">
@@ -50,7 +50,7 @@ const Navbar = () => {
         }
       </ul>
     </div>
-    <a className="normal-case font-bold text-rose-900 text-4xl">Weeding planner</a>
+    <a className="normal-case font-bold text-rose-900 text-4xl text-center md:">Weeding planner</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

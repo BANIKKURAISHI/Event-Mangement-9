@@ -52,9 +52,8 @@ const myCreateRoute=createBrowserRouter([
 
      {
           path:'/details',
-        
           element:<Private><Details2></Details2></Private>,
-          loader:()=>fetch('/ServiceData.Json/'),
+          loader:()=>fetch('/ServiceData.Json'),
      }
      
 
