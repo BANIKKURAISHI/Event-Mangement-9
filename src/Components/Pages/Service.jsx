@@ -14,7 +14,7 @@ const Service = ({service}) => {
                          <p>{short_description}</p>
                          </div>
                          <div className="card-actions justify-center mb-4">
-                     <Link to={`/details/${id}`} ><button  className="btn  w-3/4  bg-red-600 ">Details</button></Link>    
+                        <Link to={`/details/${id}`} ><button  className="btn  w-3/4  bg-red-600 ">Details</button></Link>    
                        </div>
             
         </div>

@@ -15,7 +15,7 @@ const Home = () => {
         <div className="max-w-8xl mx-auto">
              <div className="static">
              <Background></Background>
-             <div className="-my-72">
+             <div className="-my-32">
              <Single></Single>
              </div>
             

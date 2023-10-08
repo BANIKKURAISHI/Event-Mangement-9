@@ -11,6 +11,7 @@ import Private from "../PROVIDER/Private";
 
 
 
+
 const myCreateRoute=createBrowserRouter([
       {
        path:'/',
@@ -50,7 +51,9 @@ const myCreateRoute=createBrowserRouter([
         
           element:<Private><Details></Details></Private>,
           loader:()=>fetch('/ServiceData.Json'),
-     }
+     },
+     
+
 
       
        ]

@@ -1,4 +1,6 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useParams } from "react-router-dom";
+
+
 
 const Details = () => {
              const gives =useLoaderData()
@@ -7,18 +9,22 @@ const Details = () => {
             const give =gives.find(give=>give.id===newId)
              const {img,name,details}=give
 
+            
+
     return (
 
-        <div className="justify-center  my-72 mx-[650px] ">
-              <div className="card card-compact  w-[600px] h-[400px] bg-base-100 shadow-xl">
+        <div className="justify-center max-w-8xl  my-72 mx-[650px] ">
+              <div className="card card-compact  bg-base-100 shadow-xl">
                          <figure><img src={img} alt="Shoes"className="w-full h-60" /></figure>
                          <div className="card-body">
                          <h2 className="card-title">{name}</h2>
                          <p>{details}</p>
                          </div>
-                        
-        </div>
-        </div>
+                               
+              </div>
+           
+      </div>   
+       
     );
 };
 

@@ -2,17 +2,10 @@
 
 const Banner = () => {
     return (
-        <div>
-            <div className="carousel carousel-center w-[1200px] rounded-lg">
-            <div className="carousel-item">
-            <img className="w-[500px] h-[600px]"  src="https://i.ibb.co/jMbWMWQ/pngtree-pink-cartoon-heart-balloon-wedding-banner-picture-image-1110552.png" alt="Pizza" />
-         </div> 
-          <div className="carousel-item">
-              <img className="w-[500px] h-[600px] " src="https://i.ibb.co/crQ5491/a3c68a0fa394f693c6ddf97c8192c08a.jpg" alt="Pizza" />
-        </div> 
-        
-</div>
+        <div className="max-w-7xl mx-auto">
+            <img className="w-[1300px] h-[800px] opacity-70" src="https://i.ibb.co/LxRQbc1/zoom-autumn-wedding-background-tmb.jpg" alt="" />
         </div>
+        
     );
 };
 
