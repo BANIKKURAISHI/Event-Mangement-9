@@ -1,9 +1,23 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-
+import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from './../PROVIDER/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
    const [open,setOpen]=useState(false)
+   const {user,logOut}=useContext(AuthContext)
+
+   const logoutButton=()=>{
+        logOut()
+       .then(()=>toast('Logout success full'))
+       .catch(error=>{
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast(errorCode ,errorMessage )
+      })
+   }
+
     const links=<div>
 
 <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600 text-center rounded-md"}>Home</NavLink>
@@ -43,8 +57,18 @@ const Navbar = () => {
      {links}
     </ul>
   </div>
+  {
+    user?<div>
+        <h1>{user.email}</h1>
+        <button onClick={logoutButton}>Logout</button>
+    </div>:
+    <div>
+      <Link to='/in'></Link>
+    </div>
+  }
 
 </div>
+<ToastContainer /> 
         </div>
     );
 };

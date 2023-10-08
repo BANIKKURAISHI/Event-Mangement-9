@@ -6,6 +6,8 @@ import Reg from "../Reg and Log in page/Reg";
 import Login from "../Reg and Log in page/Login";
 import Team from "../Home/Team";
 import ContactUs from "../Pages/ContactUs";
+import Details from "../Pages/Details";
+import Private from "../PROVIDER/Private";
 
 
 
@@ -38,9 +40,16 @@ const myCreateRoute=createBrowserRouter([
        
      },
      {
+         
           path:'/contact',
-          element:<ContactUs></ContactUs>,
+          element:<Private><ContactUs></ContactUs></Private>,
        
+     },
+     {
+          path:'/details/:id',
+        
+          element:<Private><Details></Details></Private>,
+          loader:()=>fetch('/ServiceData.Json'),
      }
 
       

@@ -15,6 +15,11 @@ const Login = () => {
                 console.log(user)
                 toast("Google Login is success full ")
             })
+            .catch(error=>{
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast(errorCode ,errorMessage )
+              })
   }
 //------------------------------------sing in email and password --------------------------
 const singInButtonEmailAndPassword=(e)=>{
