@@ -62,7 +62,7 @@ const Reg = () => {
              <div className="hero-content flex-col">
              <div className="card ">
               <h1 className="text-center  text-4xl text-blue-600 my-4">Registration Now</h1>
-             <form className="w-96" onSubmit={newRegistrationButton} >
+             <form className="w-80 md:w-96 lg:w-96" onSubmit={newRegistrationButton} >
              <div className="form-control">
              <label className="label">
              <span className="label-text">Name</span>

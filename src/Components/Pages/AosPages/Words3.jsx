@@ -8,7 +8,7 @@ const Words3 = () => {
         AOS.init(
             {
                 offset:400,
-                duration:2000,
+                duration:1000,
             }
         );
       }, [])

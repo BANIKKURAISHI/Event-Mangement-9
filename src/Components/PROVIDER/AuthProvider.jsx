@@ -6,33 +6,40 @@ import auth from "../FireBase/Firebase.config";
  export const AuthContext=createContext(null)
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null)
+    const [loading,setLoading]=useState(true)
+
     const googleProvider = new GoogleAuthProvider()
 //--------Log in with google ------------------------------------------------------------------
     const googleButton=()=>{
-                return signInWithPopup(auth, googleProvider)
-    }
+               setLoading(true)
+                return signInWithPopup(auth, googleProvider)}
+                
 //---------------------------registration with email and password------------------------------
 const registrationButton=(email,password)=>{
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password)
 }
 //---------------------------Login with email and password ------------------------------------
  const singInButton=(email,password)=>{
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password)
  }
  ////--------------------------onAuth ----------------------------------------------------------
  useEffect(()=>{
-     const unsubscribe =onAuthStateChanged(auth, (currentUser) => {
+    
+     const unSubscribe =onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser)})
-
-        return()=>{unsubscribe()}
+        setLoading(false)
+        return()=>{unSubscribe()}
  },[])
  ///-----------------------logout ---------------------------------------------------------------
  const logOut=()=>{
+    setLoading(true)
     return signOut(auth)
  }
   
 //--------------------props ----------------------------------------------------------------------
-    const value={user,googleButton, registrationButton,singInButton, logOut}
+    const value={user,googleButton, registrationButton,singInButton, logOut,loading} 
     return (
         <AuthContext.Provider value={value}  >
             {children}

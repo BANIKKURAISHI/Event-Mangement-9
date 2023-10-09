@@ -8,7 +8,9 @@ import Login from "../Reg and Log in page/Login";
 import ContactUs from "../Pages/ContactUs";
 import Details from "../Pages/Details";
 import Private from "../PROVIDER/Private";
-import Details2 from "../Pages/Details2";
+import AboutUs from "../Pages/AboutUs";
+import Blog from "../Pages/Blog";
+
 
 
 
@@ -51,11 +53,18 @@ const myCreateRoute=createBrowserRouter([
      },
 
      {
-          path:'/details',
-          element:<Private><Details2></Details2></Private>,
-          loader:()=>fetch('/ServiceData.Json'),
-     }
+         
+          path:'/about',
+          element:<AboutUs></AboutUs>,
+       
+     },
      
+     {
+         
+          path:'/blog',
+          element:<Private><Blog></Blog></Private>,
+       
+     }
 
 
       

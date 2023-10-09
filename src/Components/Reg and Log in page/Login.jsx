@@ -1,5 +1,5 @@
 import { useContext} from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../PROVIDER/AuthProvider";
@@ -37,6 +37,7 @@ const singInButtonEmailAndPassword=(e)=>{
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 toast(errorCode ,errorMessage )
+                Navigate(location?.state?location.state:'/')
                })
 }
 
@@ -47,7 +48,7 @@ const singInButtonEmailAndPassword=(e)=>{
                    <div className="hero-content flex-col">
                    <div className="card ">
                    <h1 className="text-center  text-4xl text-blue-600 my-4">Login Now</h1>
-                   <form onSubmit={singInButtonEmailAndPassword}  className="w-96" >
+                   <form onSubmit={singInButtonEmailAndPassword}  className="w-80 md:w-96 lg:w-96" >
 
                       <div className="form-control">
                       <label className="label">

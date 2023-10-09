@@ -23,9 +23,11 @@ const Navbar = () => {
 <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600 text-center rounded-md"}>Home</NavLink>
 <NavLink to="/about" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium  bg-red-600 text-center rounded-md"}>About us</NavLink>
 <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600 text-center rounded-md"}>Contact Us</NavLink>
-<NavLink to="/details" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium  bg-red-600 text-center rounded-md"}>Details</NavLink>
+ <NavLink to="/blog" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium  bg-red-600 text-center rounded-md"}>Blog</NavLink>
 <NavLink to="/in" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600 text-center rounded-md"}>Login</NavLink>
 <NavLink to="/reg" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 text-red text-xl  text-center rounded-md font-medium" : "p-2 mr-2 text-xl font-medium bg-red-600  text-center rounded-md"}>Registration</NavLink>
+
+
 </div>
     return (
         <div className="max-w-7xl mx-auto  ">
@@ -42,7 +44,7 @@ const Navbar = () => {
                 <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2  my-3 text-center rounded-md text-red text-xl font-medium " : "p-2 mr-2 my-3 text-center text-xl font-medium  bg-red-600 rounded-md"}>Home</NavLink>
                 <NavLink to="/about" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2  my-3 text-center rounded-md text-red text-xl font-medium " : "p-2 mr-2 my-3 text-center text-xl font-medium  bg-red-600  rounded-md"}>About us</NavLink>
                 <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2  my-3 text-center rounded-md text-red text-xl font-medium " : "p-2 mr-2 my-3 text-center  text-xl font-medium bg-red-600  rounded-md"}>Contact Us</NavLink>
-                <NavLink to="/details" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " : "p-2 mr-2 my-3 text-center text-xl font-medium  bg-red-600  rounded-md"}>Details</NavLink>
+                {/* <NavLink to="/details" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " : "p-2 mr-2 my-3 text-center text-xl font-medium  bg-red-600  rounded-md"}>Details</NavLink> */}
                 <NavLink to="/in" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 my-3 text-center  rounded-md text-red text-xl font-medium " : "p-2 mr-2  my-3  text-center text-xl font-medium  bg-red-600 rounded-md"}>Login</NavLink>
                 <NavLink to="/reg" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 p-2 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " : "p-2 mr-2 my-3 text-center text-xl font-medium  bg-red-600  rounded-md"}>Registration</NavLink>
              </div>

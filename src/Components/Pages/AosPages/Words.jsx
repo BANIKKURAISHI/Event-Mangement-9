@@ -4,7 +4,12 @@ import { useEffect } from 'react';
 
 const Words = () => {
   useEffect(() => {
-        AOS.init();
+        AOS.init(
+          {
+            offset:400,
+            duration:1000,
+        }
+        );
       }, [])
     return (
         <div data-aos='fade-right'>

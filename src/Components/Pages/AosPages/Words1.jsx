@@ -6,7 +6,12 @@ import { useEffect } from 'react';
 
 const Words1 = () => {
   useEffect(() => {
-        AOS.init();
+        AOS.init(
+          {
+            offset:400,
+            duration:1000,
+        }
+        );
       }, [])
     return (
         <div className=' 'data-aos='fade-left'>

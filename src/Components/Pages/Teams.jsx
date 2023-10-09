@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
+
 const Teams = () => {
    
     const [val,setVal]=useState([])
@@ -34,7 +35,11 @@ const Teams = () => {
                     val.map(team=><Team key={team.id} team={team}></Team>)
                 }
 
+
+
           </div>
+
+          
         </div>
     );
 };
