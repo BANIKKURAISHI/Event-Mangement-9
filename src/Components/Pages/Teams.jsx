@@ -28,7 +28,7 @@ const Teams = () => {
         <div >
             
 
-            <div className="flex md:flex-row " data-aos='fade-up'>
+            <div className="grid grid-cols-1  mx-7  md:grid-cols-2 gap-20 lg:grid-cols-4 " data-aos='fade-up'>
               
                 {
                     val.map(team=><Team key={team.id} team={team}></Team>)
