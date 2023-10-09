@@ -6,7 +6,7 @@ const Team = ({team}) => {
     return (
         <div>
              
-            <div className="card w-80 h-80 rounded-full bg-base-100 shadow-2xl">
+            <div className="card w-80 h-80 rounded-full bg-base-300 shadow-2xl">
             <figure><img src={photo} className='w-52 h-52 rounded-full ' alt="Shoes" /></figure>
             <div className="card-body">
             <h2 className=" text-center">{name}</h2>

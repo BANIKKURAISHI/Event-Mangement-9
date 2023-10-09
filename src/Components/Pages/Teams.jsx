@@ -1,6 +1,7 @@
 import { useEffect, useState,  } from "react";
 import Team from "./Team";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Teams = () => {
@@ -10,8 +11,16 @@ const Teams = () => {
     fetch('/Team.Json')
     .then(res=>res.json())
     .then(data=>setVal(data))
+    AOS.init(
+        {
+            offset:400,
+            duration:2000,
+        }
+    );
     
- })
+
+    
+ },[])
 
 
     
@@ -19,7 +28,7 @@ const Teams = () => {
         <div >
             
 
-            <div className="flex md:flex-row ">
+            <div className="flex md:flex-row " data-aos='fade-up'>
               
                 {
                     val.map(team=><Team key={team.id} team={team}></Team>)

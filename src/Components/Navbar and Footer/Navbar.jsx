@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
    const [open,setOpen]=useState(false)
    const {user,logOut}=useContext(AuthContext)
-
+  console.log(user)
    const logoutButton=()=>{
         logOut()
        .then(()=>toast('Logout success full'))
@@ -62,9 +62,9 @@ const Navbar = () => {
     user?<div>
         <div className="flex flex-row">
         <img src={user?.img} className="w-20 h-20" alt=""  />
-        <h1 className="text-white text-center -pb-2 text-sm bg-rose-700 border rounded-md ">{user.email}
-        <br />{user.name}</h1>
-        <button className="bg-rose-700 text-white p-3 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " onClick={logoutButton}>Logout</button>
+        <h1 className="my-8">{user.email}
+        <br />{user.displayName}</h1>
+        <button className="bg-red-600 text-white px-3 ml-2  my-3 text-center rounded-md text-red text-xl font-medium " onClick={logoutButton}>Logout</button>
         </div>
       
        

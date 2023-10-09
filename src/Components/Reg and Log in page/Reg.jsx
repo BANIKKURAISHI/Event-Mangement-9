@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../PROVIDER/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
+
 
 
 const Reg = () => {
@@ -12,28 +14,39 @@ const Reg = () => {
                e.preventDefault()
                const form=new FormData(e.currentTarget)
                const email=form.get('email')
+               const name=form.get('name')
                const password =form.get('password')
-             console.log(email,password)
-      if(password.length <6){
-        toast('You must should given valid password' )
-         return
-      }
-      else if (!/[A-Z0]/.test(password)){
-        toast('You must should given valid password' )
-        return 
-      }
-      else if (!/(?=.*[!@#$%^&*()_+])/.test(password)){
-        toast('You must should given valid password' )
-        return 
-      }
+              const photo =form.get('photo')
+
+
+             console.log(photo ,email,password,name)
+             if(password.length <6){
+             toast('You must should given valid password' )
+             return
+               }
+             else if (!/[A-Z0]/.test(password)){
+             toast('You must should given valid password' )
+             return 
+              }
+             else if (!/(?=.*[!@#$%^&*()_+])/.test(password)){
+              toast('You must should given valid password' )
+              return 
+              }
 
 
 
              registrationButton(email,password)
              .then(result=>{
               toast('Your registration is success full',result)
+
+              updateProfile(result.user, {
+                displayName: name, photoURL: photo,
+              }).then(() => {
+                toast('Profile update ')
+              })
              })
-             .catch(error=>{
+            
+              .catch(error=>{
               const errorCode = error.code;
               const errorMessage = error.message;
               toast(errorCode ,errorMessage )
@@ -56,6 +69,14 @@ const Reg = () => {
              </label>
              <input type="text" name="name" placeholder="Enter your name" className="input input-bordered" required />
              </div>
+               
+             <div className="form-control">
+                  <label className="label">
+                  <span className="label-text">Photo Url</span>
+                  </label>
+                  <input type="url" name="photo" placeholder="Enter your photo url" className="input input-bordered" required />
+                  </div>
+
                   <div className="form-control">
                   <label className="label">
                   <span className="label-text">Email</span>
