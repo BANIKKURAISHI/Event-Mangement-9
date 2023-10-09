@@ -10,6 +10,16 @@ import { updateProfile } from "firebase/auth";
 const Reg = () => {
         const {registrationButton}=useContext(AuthContext)
 
+
+        const img ={
+          backgroundImage:'url("https://i.ibb.co/DRHN5bz/HD-wallpaper-pink-tulips-loral-background.jpg")',
+            opacity:1,
+            height:600,
+            weight:200,
+            borderRadius:15,
+         }
+
+
        const newRegistrationButton=(e) =>{
                e.preventDefault()
                const form=new FormData(e.currentTarget)
@@ -58,35 +68,35 @@ const Reg = () => {
     return (
         <div>
             <ToastContainer /> 
-             <div className="hero min-h-screen bg-base-200">
-             <div className="hero-content flex-col">
-             <div className="card ">
-              <h1 className="text-center  text-4xl text-blue-600 my-4">Registration Now</h1>
-             <form className="w-80 md:w-96 lg:w-96" onSubmit={newRegistrationButton} >
+             <div className="hero min-h-screen bg-base-200 ">
+             <div style={img} className="hero-content flex-col">
+             <div className="card mx-2 lg:mx-24">
+              <h1 className="text-center  text-4xl text-white my-4 font-bold">Registration Now</h1>
+             <form className="w-80  md:w-96 lg:w-96" onSubmit={newRegistrationButton} >
              <div className="form-control">
              <label className="label">
-             <span className="label-text">Name</span>
+             <span className="label-text text-blue-900 font-bold">Name</span>
              </label>
              <input type="text" name="name" placeholder="Enter your name" className="input input-bordered" required />
              </div>
                
              <div className="form-control">
                   <label className="label">
-                  <span className="label-text">Photo Url</span>
+                  <span className="label-text text-blue-800 font-bold">Photo Url</span>
                   </label>
                   <input type="url" name="photo" placeholder="Enter your photo url" className="input input-bordered" required />
                   </div>
 
                   <div className="form-control">
                   <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-blue-800 font-bold">Email</span>
                   </label>
                   <input type="email" name="email" placeholder="Enter your email" className="input input-bordered" required />
                   </div>
 
                <div className="form-control">
                <label className="label">
-               <span className="label-text">Password</span>
+               <span className="label-text text-blue-800 font-bold">Password</span>
                </label>
                <input type="password" name="password" placeholder="Enter your password" className="input input-bordered" required />
                    
@@ -96,7 +106,7 @@ const Reg = () => {
                     </div>
                     
                </form>
-               <div><p className="text-2xl my-3">Already Have an account ?Please <Link className="text-blue-700 mx-2" to="/in">Login</Link></p></div>
+               <div><p className="text-2xl my-3 text-white">Already Have an account ?Please <Link className="text-white font-bold underline mx-2" to="/in">Login</Link></p></div>
     </div>
   </div>
 </div>
