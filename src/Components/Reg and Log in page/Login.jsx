@@ -42,9 +42,9 @@ const singInButtonEmailAndPassword=(e)=>{
 }
 
     return (
-        <div>
+        <div >
            
-                   <div className="hero min-h-screen bg-base-200">
+                   <div className="hero min-h-screen bg-base-200 ">
                    <div className="hero-content flex-col">
                    <div className="card ">
                    <h1 className="text-center  text-4xl text-blue-600 my-4">Login Now</h1>
