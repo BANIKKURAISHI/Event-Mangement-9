@@ -32,7 +32,7 @@ const Navbar = () => {
     return (
         <div className="max-w-7xl mx-auto  ">
             <div className="navbar flex-col md:flex-row  bg-solid-400 rounded-md">
-  <div className="navbar-start flex flex-col md:flex-row  text-start">
+            <div className="navbar-start flex flex-col md:flex-row  text-start">
     <div onClick={()=>setOpen(!open)} className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -63,7 +63,7 @@ const Navbar = () => {
   {
     user?<div className="text-center md:text-end">
         <div className="flex flex-col md:flex-row">
-        <img src={user?.photoURL} className="w-20 mx-16 h-20 rounded-full md:my-3 lg:my-16" alt=""  />
+        <img src={user.photoURL} className="w-20 mx-16 h-20 rounded-full md:my-3 lg:my-16" alt=""  />
         <div className="text-center mx-10  md:">
         <h1 className=" lg:my-8  ">{user.email}
         <br />{user.displayName}</h1>
@@ -73,9 +73,10 @@ const Navbar = () => {
       
        
     </div>:
-    <div>
+    <div >
       
-      <NavLink to="/in" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-rose-700 text-white p-3 mr-2 my-3 text-center rounded-md text-red text-xl font-medium " : "p-3 mr-2 my-3 text-center text-xl font-medium  text-white bg-red-600  rounded-md"}>Login</NavLink>
+      <NavLink to="/in" className={({ isActive, isPending }) => isPending ? "pending" : isActive ?
+       "bg-rose-700  text-white text-center rounded-md text-red text-xl font-medium p-3 mr-2 my-3 ":"text-center text-xl font-medium  text-white bg-red-600  rounded-md p-3 mr-2 my-3"}>Login</NavLink>
     </div>
   }
 </div>

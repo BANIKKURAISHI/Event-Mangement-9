@@ -48,7 +48,7 @@ const Home = () => {
              </div >
              <div>
              <h1 className="text-4xl text-start  mx-8  font-semibold text-rose-950  rounded-lg lg:mx-[370px]   ">Our team Members</h1>
-           <hr className="max-w-7xl  mx-8   lg:mx-[370px] "/>
+             <hr className="max-w-7xl  mx-8   lg:mx-[370px] "/>
              </div>
 
              <div className=" max-w-7xl mx-auto mt-10 mb-36 md:ml-40 lg:mx-[330px] ">
